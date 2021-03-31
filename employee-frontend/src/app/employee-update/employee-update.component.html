@@ -1,0 +1,98 @@
+<main role="main" class="main-fonts main-button main-background">
+    <div class="container py-4">
+        <div class="row py-4">
+            <div class="col-md-12">
+                <h1>Update Employee</h1>
+                <div *ngIf="employeeOrignal" class="mt-5 pl-2">
+                    <form [formGroup]="registerEmployeeForm">
+
+                        <div> 
+                            <span class="fa_asterisk">*</span>
+                            <label for="name">First Name:</label>
+                            <input type="text" formControlName="firstName" id="name" [ngModel]="employeeOrignal.firstName"
+                                placeholder="First Name" name="firstName" required class="form-control my-2" />
+                            <div
+                            *ngIf="
+                            registerEmployeeForm.controls['firstName'].errors &&
+                            registerEmployeeForm.controls['firstName'].touched
+                            "
+                            class="pb-1"
+                            >
+                            <div>First Name is required. Please fill the field.</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="fa_asterisk">*</span>
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" formControlName="lastName" id="lastName" [ngModel]="employeeOrignal.lastName"
+                                placeholder="Last Name" name="lastName" required class="form-control my-2" />
+                            <div
+                            *ngIf="
+                            registerEmployeeForm.controls['lastName'].errors &&
+                            registerEmployeeForm.controls['lastName'].touched
+                            "
+                            class="pb-1"
+                            >
+                            <div>Last Name is required. Please fill the field.</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="fa_asterisk">*</span>
+                            <label for="email">Email:</label>
+                            <input type="text" formControlName="email" id="email" [ngModel]="employeeOrignal.email"
+                                placeholder="Email" name="email" required class="form-control my-2" />
+                            <div
+                            *ngIf="
+                            registerEmployeeForm.controls['email'].errors &&
+                            registerEmployeeForm.controls['email'].touched
+                            "
+                            class="pb-1"
+                            >
+                            <div>Email is required. Please fill the field.</div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="address">Address:</label>
+                            <input type="text" formControlName="address" id="address" [ngModel]="employeeOrignal.address"
+                                 placeholder="Address" name="address" required class="form-control my-2" />
+                            <!-- <div
+                            *ngIf="
+                            registerEmployeeForm.controls['address'].errors &&
+                            registerEmployeeForm.controls['address'].touched
+                            "
+                            class="pb-1"
+                            >
+                            <div>Address is required. Please fill the field.</div>
+                            </div> -->
+                        </div>
+                        <div>
+                            <label for="mobilePhoneNumber">Mobile Phone Number:</label>
+                            <input type="text" formControlName="mobilePhoneNumber" id="mobilePhoneNumber" [ngModel]="employeeOrignal.mobilePhoneNumber"
+                                 placeholder="Mobile Phone Number" name="mobilePhoneNumber" required class="form-control my-2" />
+                            <!-- <div
+                            *ngIf="
+                            registerEmployeeForm.controls['mobilePhoneNumber'].errors &&
+                            registerEmployeeForm.controls['mobilePhoneNumber'].touched
+                            "
+                            class="pb-1"
+                            >
+                            <div>Mobile Phone Number is required. Please fill the field.</div>
+                            </div> -->
+                        </div>
+                        <div class="w-100 p-3 text-center">
+                            <button [disabled]="registerEmployeeForm.invalid || registerEmployeeForm.invalid"
+                            (click)="updateEmployee()" class="my-4" >                       
+                                Register
+                            </button>    
+                        </div>
+
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</main>

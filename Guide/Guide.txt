@@ -1,0 +1,49 @@
+1) Create a folder in your local system with name: EMPLOYEE_PROJECT
+Angular 8 - Postgres 13 - Spring boot 2.4.4
+
+
+EMPLOYEE Database:
+
+1) Create a postgres database with name: employee_db_1
+2) Create a postgres role with name/password for example: 'employee'/'1234'
+3) In your property file use database's url for the 'flyway.url' field
+4) Open the pom xml file of the backend and in the flywaydb plugin fill in the configurations, for example 
+			     <configuration> 
+			        <url>jdbc:postgresql://localhost:5432/employee_db_1</url> 
+			        <user>employee</user> 
+			        <password>1234</password>
+			        <locations>classpath:db/migration</locations> 
+			    </configuration>
+
+
+5) Navigate to the path: 'EMPLOYEE_PROJECT\employee-backend' and execute the command-> mvn clean flyway:migrate
+	
+6) Check that the database has been created
+
+
+
+RUN backend: 
+
+1) Navigate to 'EMPLOYEE_PROJECT\employee-backend' and execute-> mvn clean install
+2) Run the back end application
+		Options: 
+			#1-eclipse: 1) From Eclipse 
+
+			#2-command line: 1) mvn spring-boot:run 
+
+
+Front end:
+
+1) Navigate to EMPLOYEE_PROJECT\employee-frontend and execute-> npm install 
+2) execute-> ng serve
+
+
+check if everything works, navigate with ur browser: http://localhost:4200 
+
+
+
+
+
+ 
+
+	 
